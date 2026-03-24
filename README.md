@@ -254,15 +254,6 @@ meaningful loss.
 
 ## 10. Lessons Learned
 
-### What went wrong in the original code
-
-| Issue | Consequence | Fix |
-|---|---|---|
-| Duplicate rows not removed | Data leakage inflated accuracy to 99.6% | Deduplicate before split |
-| Scaler fit on full dataset | Test statistics leak into training | Fit scaler on train only |
-| No `stratify=y` | Class ratio may differ across splits | Add `stratify=y` |
-| Missing import | `train_test_split` not imported | Added to imports |
-
 ### Why accuracy alone is misleading here
 
 The dummy classifier (always predict "No Diabetes") achieves **64.7% accuracy**
@@ -292,6 +283,6 @@ becomes more reliable.
 
 ## 12. References
 
-- Pima Indians Diabetes Database — UCI Machine Learning Repository
+- Healthcare Diabetes Database — UCI Machine Learning Repository [https://www.kaggle.com/datasets/nanditapore/healthcare-diabetes/data](https://www.kaggle.com/datasets/nanditapore/healthcare-diabetes/data)
 - Smith, J.W. et al. (1988). *Using the ADAP learning algorithm to forecast the onset of diabetes mellitus*
 - Scikit-learn documentation — [https://scikit-learn.org](https://scikit-learn.org)
